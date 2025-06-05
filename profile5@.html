@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 프로필 작성</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>내 프로필 작성</h1>
+
+    <form>
+        <div class="form-group column">
+            <label for="nickname">닉네임</label>
+            <input type="text" id="nickname" name="nickname">
+        </div>
+
+        <div class="form-group column">
+            <label for="usual-location">평소 출석하는 지역과 시간</label>
+            <input type="text" id="usual-location" name="usual-location">
+        </div>
+
+        <div class="form-group column">
+            <label for="tomorrow-location">내일 출석할 지역과 시간</label>
+            <input type="text" id="tomorrow-location" name="tomorrow-location">
+        </div>
+
+        <!-- 모던춤종목 섹션 - SHOW_MODERN을 true/false로 변경하여 표시/숨김 -->
+        <div id="modern-dance-section" class="HIDE_MODERN">
+            <h2>모던춤종목</h2>
+            <div id="modern-section">
+                <div class="form-group column"><label>왈츠</label><input type="text" name="waltz"></div>
+                <div class="form-group column"><label>탱고</label><input type="text" name="tango"></div>
+                <div class="form-group column"><label>폭스</label><input type="text" name="foxtrot"></div>
+                <div class="form-group column"><label>비엔나왈츠</label><input type="text" name="vienna-waltz"></div>
+                <div class="form-group column"><label>퀵스텝</label><input type="text" name="quickstep"></div>
+            </div>
+        </div>
+
+        <!-- 라틴춤종목 섹션 - SHOW_LATIN을 true/false로 변경하여 표시/숨김 -->
+        <div id="latin-dance-section" class="HIDE_LATIN">
+            <h2>라틴춤종목</h2>
+            <div id="latin-section">
+                <div class="form-group column"><label>자이브</label><input type="text" name="jive"></div>
+                <div class="form-group column"><label>룸바</label><input type="text" name="rumba"></div>
+                <div class="form-group column"><label>차차차</label><input type="text" name="chachacha"></div>
+                <div class="form-group column"><label>쌈바</label><input type="text" name="samba"></div>
+                <div class="form-group column"><label>파소도블레</label><input type="text" name="pasodoble"></div>
+            </div>
+        </div>
+
+        <div class="form-group column">
+            <label for="dance-partners">누구랑 보통 같이 춤을 추는지(이름or닉네임 생각나는대로)</label>
+            <input type="text" id="dance-partners" name="dance-partners">
+        </div>
+
+        <h2>춤실력은?</h2>
+        
+        <div class="form-group column">
+            <label for="intermediate-skill">중급실력(상대 선생님이 나라시 금액을 받으려고 하지는 않는다.)</label>
+            <input type="text" id="intermediate-skill" name="intermediate-skill">
+        </div>
+
+        <div class="form-group column">
+            <label for="advanced-skill">중고급실력("선생이에요?" 라는 질문을 받은 적이 있다.)</label>
+            <input type="text" id="advanced-skill" name="advanced-skill">
+        </div>
+
+        <div class="form-group column">
+            <label for="expert-skill">고급실력(댄스장에서 선생이 나를 파트너로서 잡아준다. 나랑 같이 경기 뛰어도 되겠네 라는 말을 듣곤 한다.)</label>
+            <input type="text" id="expert-skill" name="expert-skill">
+        </div>
+
+        <!-- 학원 관련 섹션 - ACADEMY_GROUP 클래스로 통합 관리 -->
+        <div class="form-group row-group show_ACADEMY_GROUP">
+            <!-- 다니는 학원 -->
+            <div class="inline-group">
+                <label for="current-academy">다니는 학원</label>
+                <input type="text" id="current-academy" name="current-academy">
+            </div>
+
+            <!-- 다녔던 학원 -->
+            <div class="inline-group">
+                <label for="past-academy">다녔던 학원</label>
+                <input type="text" id="past-academy" name="past-academy">
+            </div>
+
+            <!-- 다니고 싶은 학원 -->
+            <div class="inline-group">
+                <label for="wish-academy">다니고 싶은 학원</label>
+                <input type="text" id="wish-academy" name="wish-academy">
+            </div>
+        </div>
+
+        <!-- 선생님 관련 섹션 - TEACHER_GROUP 클래스로 통합 관리 -->
+        <div class="show_TEACHER_GROUP">
+            <!-- 교육받았던 쌤 이름 -->
+            <div class="inline-group column">
+                <label for="past-teachers">교육받았던 쌤 이름</label>
+                <input type="text" id="past-teachers" name="past-teachers">
+            </div>
+
+            <!-- 교육받고 있는 쌤 이름 -->
+            <div class="inline-group column">
+                <label for="current-teachers">교육받고 있는 쌤 이름</label>
+                <input type="text" id="current-teachers" name="current-teachers">
+            </div>
+
+            <!-- 교육받고 싶은 쌤 이름 -->
+            <div class="inline-group column">
+                <label for="wish-teachers">교육받고 싶은 쌤 이름</label>
+                <input type="text" id="wish-teachers" name="wish-teachers">
+            </div>
+        </div>
+
+        <button type="submit" class="submit-button">저장하기</button>
+    </form>
+
+    <style>
+        /* 섹션 표시/숨김을 위한 CSS */
+        .SHOW_MODERN { display: block; }
+        .HIDE_MODERN { display: none; }
+        .SHOW_LATIN { display: block; }
+        .HIDE_LATIN { display: none; }
+        
+        /* 학원 그룹 표시/숨김 - 한 번에 3개 항목 모두 제어 */
+        .SHOW_ACADEMY_GROUP { display: block; }
+        .HIDE_ACADEMY_GROUP { display: none; }
+        
+        /* 선생님 그룹 표시/숨김 - 한 번에 3개 항목 모두 제어 */
+        .SHOW_TEACHER_GROUP { display: block; }
+        .HIDE_TEACHER_GROUP { display: none; }
+    </style>
+
+</body>
+</html>
